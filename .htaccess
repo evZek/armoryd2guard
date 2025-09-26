@@ -1,0 +1,13 @@
+# Activar el motor de reescritura de URLs de Apache
+RewriteEngine On
+
+# --- Forzar el uso del dominio sin 'www' ---
+
+# Condición: Aplicar la siguiente regla SOLO SI el host solicitado EMPIEZA con 'www.'
+RewriteCond %{HTTP_HOST} ^www\.armoryd2guard\.evzek\.net$ [NC]
+
+# Regla: Si la condición se cumple, redirigir permanentemente (301)
+# a la misma URL pero en el dominio sin 'www.'
+# (.*) captura toda la ruta solicitada (ej. /dashboard.php)
+# $1 la pega en la nueva URL.
+RewriteRule ^(.*)$ https://armoryd2guard.evzek.net/$1 [L,R=301]

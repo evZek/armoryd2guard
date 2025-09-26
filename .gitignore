@@ -1,0 +1,19 @@
+# Ignorar logs y archivos temporales
+api_errors.log
+manifest/
+manifest/cache/
+manifest/manifest_en.sqlite
+manifest/manifest_es.sqlite
+manifest/version.txt
+
+# Ignorar configuraciones sensibles
+.env
+
+# Ignorar archivos generados por IDEs o editores
+*.log
+*.bak
+.DS_Store
+
+# Ignorar carpetas de caché o compilación
+/cache/
+/vendor/
